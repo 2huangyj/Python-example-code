@@ -31,10 +31,11 @@ for row in csv.reader(f):#this is picking out each row
 		numbers = row[0].split('\t')
 		new_numbers = [float(number) for number in numbers]
 		data_array = np.row_stack((data_array,np.array(new_numbers)))
- 	except ValueError:
- 		print row
- 		continue
- 	except NameError:
+ 	except ValueError:#I did tihs for the command "new_numbers"
+	 	print row
+	 	continue
+	except NameError:#I did this for the command"data_array"
+	#, but both exception handling are for the first row!
  		data_array = np.array(new_numbers)
 
 
